@@ -256,3 +256,13 @@ This project is released under the [Apache 2.0 license](LICENSE).
 - [MMRazor](https://github.com/open-mmlab/mmrazor): OpenMMLab model compression toolbox and benchmark.
 - [MIM](https://github.com/open-mmlab/mim): MIM installs OpenMMLab packages.
 - [Playground](https://github.com/open-mmlab/playground): A central hub for gathering and showcasing amazing projects built upon OpenMMLab.
+
+# Train SegFormer on custom data
+
+- [x] Start training
+
+## Start SegFormer training with following command: 
+```
+python tools/train.py configs/segformer/segformer_mit-b0_8xb1-10k_coco_stuff-512x512.py
+```
+
