@@ -15,7 +15,7 @@ class TACOStuffDataset(BaseSegDataset):
     and ``seg_map_suffix`` is fixed to '.png'.
     """
     METAINFO = dict(
-        classes=(['Aluminium foil', 'Battery', 'Aluminium blister pack', 'Carded blister pack',
+        classes=('Aluminium foil', 'Battery', 'Aluminium blister pack', 'Carded blister pack',
 		 'Other plastic bottle', 'Clear plastic bottle', 'Glass bottle', 'Plastic bottle cap',
 		 'Metal bottle cap', 'Broken glass', 'Food Can', 'Aerosol',
 		 'Drink can', 'Toilet tube', 'Other carton', 'Egg carton',
@@ -29,7 +29,7 @@ class TACOStuffDataset(BaseSegDataset):
 		 'Tupperware', 'Disposable food container', 'Foam food container', 'Other plastic container',
 		 'Plastic glooves', 'Plastic utensils', 'Pop tab', 'Rope & strings',
  		 'Scrap metal', 'Shoe', 'Squeezable tube', 'Plastic straw',
-		 'Paper straw', 'Styrofoam piece', 'Unlabeled litter', 'Cigarette'], 
+		 'Paper straw', 'Styrofoam piece', 'Unlabeled litter', 'Cigarette'), 
         palette=[[0, 192, 64], [0, 192, 64], [0, 64, 96], [128, 192, 192],
                  [0, 64, 64], [0, 192, 224], [0, 192, 192], [128, 192, 64],
                  [0, 192, 96], [128, 192, 64], [128, 32, 192], [0, 0, 224],

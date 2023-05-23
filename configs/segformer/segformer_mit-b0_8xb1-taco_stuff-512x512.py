@@ -1,6 +1,6 @@
 _base_ = [
     '../_base_/models/segformer_mit-b0.py',
-    '../_base_/datasets/coco-stuff10k.py',
+    '../_base_/datasets/taco-stuff.py',
     '../_base_/default_runtime.py', '../_base_/schedules/schedule_20k.py'
 ]
 crop_size = (512, 512)
@@ -8,7 +8,7 @@ data_preprocessor = dict(size=crop_size)
 model = dict(
     data_preprocessor=data_preprocessor,
     backbone=dict(
-        init_cfg=dict(type='Pretrained', checkpoint='mm_pretrain/mit_b1_conv.pth')),
+        init_cfg=dict(type='Pretrained', checkpoint='mm_pretrain/mit_b0_conv.pth')),
     test_cfg=dict(mode='slide', crop_size=(1024, 1024), stride=(768, 768)))
 
 optim_wrapper = dict(
