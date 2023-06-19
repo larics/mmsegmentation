@@ -14,7 +14,19 @@ class TACOStuffDataset(BaseSegDataset):
     10k and 164k versions, respectively. The ``img_suffix`` is fixed to '.jpg',
     and ``seg_map_suffix`` is fixed to '.png'.
     """
-
+    METAINFO= dict(
+                    classes = ("Other", 'Bottle', 'Bottle cap', 'Can', 'Cup', 'Lid', 'Plastic bag', 
+                    'Pop tab', 'Straw', 'Cigarette'), 
+                    palette=[[16, 16, 16],    # Background (Black) --> Other
+                             [230, 25, 75],   # Class 1 (Red) --> Bottle
+                             [60, 180, 75],   # Class 2 (Green) --> Bottle cap
+                             [0, 130, 200],   # Class 3 (Blue) --> Can
+                             [245, 130, 48],  # Class 4 (Orange) --> Cup
+                             [145, 30, 180],  # Class 5 (Purple) --> Lid
+                             [70, 240, 240],  # Class 6 (Cyan) --> Plastic bag
+                             [240, 50, 230],  # Class 7 (Magenta) --> Pop tab
+                             [210, 245, 60],  # Class 8 (Lime) --> Straw
+                             [250, 190, 190]])  # Class 9 (Pink)] --> Cigarette)
 
     def __init__(self,
                  img_suffix='.jpg',
@@ -22,12 +34,6 @@ class TACOStuffDataset(BaseSegDataset):
                  **kwargs) -> None:
         super().__init__(
             img_suffix=img_suffix, seg_map_suffix=seg_map_suffix, **kwargs)
-
-        classes = ("Other", 'Bottle', 'Bottle cap', 'Can', 'Cup', 'Lid', 'Plastic bag', 
-                    'Pop tab', 'Straw', 'Cigarette')
-        palette=[[0, 192, 64], [0, 192, 64], [0, 64, 96], [128, 192, 192],
-                 [0, 64, 64], [0, 192, 224], [0, 192, 192], [128, 192, 64],
-                 [0, 192, 96], [128, 192, 64]] 
 
 # All categories 
 """classes=('Aluminium foil', 'Battery', 'Aluminium blister pack', 'Carded blister pack',

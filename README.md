@@ -260,9 +260,21 @@ This project is released under the [Apache 2.0 license](LICENSE).
 # Train SegFormer on custom data
 
 - [x] Start training
+- [x] Enable visualization on custom data --> Works (Check number of stuff that's going to be evaluated!)
+- [x] Check data for TACO stuff
+- [ ] Add plot of the labels 
+- [ ] Add early stopping after some precision measure is satisfying 
+- [ ] Test inferencer on ROS node 
 
 ## Start SegFormer training with following command: 
 ```
 python tools/train.py configs/segformer/segformer_mit-b0_8xb1-10k_coco_stuff-512x512.py
 ```
+
+## Run tensorboard with following command: 
+```
+tensorboard --db 20230525_113647.log 
+```
+
+Log can be found in the work-dir of the corresponding config(model) name. 
 

@@ -51,6 +51,10 @@ def voc_classes():
         'tvmonitor'
     ]
 
+def tacostuff_classes(): 
+    """TacoStuff class names for external use."""
+    return ['Other', 'Bottle', 'Bottle cap', 'Can', 'Cup', 'Lid', 'Plastic bag', 
+            'Pop tab', 'Straw', 'Cigarette']
 
 def cocostuff_classes():
     """CocoStuff class names for external use."""
@@ -351,6 +355,13 @@ def cocostuff_palette():
             [192, 192, 192], [0, 64, 160], [192, 160, 192], [192, 192, 0],
             [128, 64, 96], [192, 32, 64], [192, 64, 128], [64, 192, 96],
             [64, 160, 64], [64, 64, 0]]
+
+def tacostuff_palette(): 
+    """TacoStuff palette for external use.""" 
+    return [[0, 192, 64], [0, 192, 64], [0, 64, 96], [128, 192, 192],
+            [0, 64, 64], [0, 192, 224], [0, 192, 192], [128, 192, 64],
+            [0, 192, 96], [128, 192, 64]]
+
 
 
 def loveda_palette():
