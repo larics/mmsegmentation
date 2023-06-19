@@ -14,8 +14,23 @@ class TACOStuffDataset(BaseSegDataset):
     10k and 164k versions, respectively. The ``img_suffix`` is fixed to '.jpg',
     and ``seg_map_suffix`` is fixed to '.png'.
     """
-    METAINFO = dict(
-        classes=('Aluminium foil', 'Battery', 'Aluminium blister pack', 'Carded blister pack',
+
+
+    def __init__(self,
+                 img_suffix='.jpg',
+                 seg_map_suffix='.png',
+                 **kwargs) -> None:
+        super().__init__(
+            img_suffix=img_suffix, seg_map_suffix=seg_map_suffix, **kwargs)
+
+        classes = ("Other", 'Bottle', 'Bottle cap', 'Can', 'Cup', 'Lid', 'Plastic bag', 
+                    'Pop tab', 'Straw', 'Cigarette')
+        palette=[[0, 192, 64], [0, 192, 64], [0, 64, 96], [128, 192, 192],
+                 [0, 64, 64], [0, 192, 224], [0, 192, 192], [128, 192, 64],
+                 [0, 192, 96], [128, 192, 64]] 
+
+# All categories 
+"""classes=('Aluminium foil', 'Battery', 'Aluminium blister pack', 'Carded blister pack',
 		 'Other plastic bottle', 'Clear plastic bottle', 'Glass bottle', 'Plastic bottle cap',
 		 'Metal bottle cap', 'Broken glass', 'Food Can', 'Aerosol',
 		 'Drink can', 'Toilet tube', 'Other carton', 'Egg carton',
@@ -29,26 +44,27 @@ class TACOStuffDataset(BaseSegDataset):
 		 'Tupperware', 'Disposable food container', 'Foam food container', 'Other plastic container',
 		 'Plastic glooves', 'Plastic utensils', 'Pop tab', 'Rope & strings',
  		 'Scrap metal', 'Shoe', 'Squeezable tube', 'Plastic straw',
-		 'Paper straw', 'Styrofoam piece', 'Unlabeled litter', 'Cigarette'), 
+		 'Paper straw', 'Styrofoam piece', 'Unlabeled litter', 'Cigarette'), """
+
+# Supercategories
+"""
+METAINFO = dict(
+        classes=('Aluminium foil', 'Battery', 'Blister', 'Bottle', 'Bottle cap', 'Broken glass', 'Can', 'Carton', 'Cup', 
+        'Food waste', 'Glass jar', 'Lid', 'Other plastic',  'Paper',  'Paper bag', 'Plastic bag & wrapper', 'Plastic container', 'Plastic glooves', 
+        'Plastic utensils', 'Pop tab', 'Rope & strings', 'Scrap metal', 'Shoe', 'Squeezable tube', 'Straw', 'Styrofoam piece', ', Unlabeled litter', 'Cigarette'), 
         palette=[[0, 192, 64], [0, 192, 64], [0, 64, 96], [128, 192, 192],
                  [0, 64, 64], [0, 192, 224], [0, 192, 192], [128, 192, 64],
                  [0, 192, 96], [128, 192, 64], [128, 32, 192], [0, 0, 224],
                  [0, 0, 64], [0, 160, 192], [128, 0, 96], [128, 0, 192],
                  [0, 32, 192], [128, 128, 224], [0, 0, 192], [128, 160, 192],
                  [128, 128, 0], [128, 0, 32], [128, 32, 0], [128, 0, 128],
-                 [64, 128, 32], [0, 160, 0], [0, 0, 0], [192, 128, 160],
-                 [0, 32, 0], [0, 128, 128], [64, 128, 160], [128, 160, 0],
-                 [0, 128, 0], [192, 128, 32], [128, 96, 128], [0, 0, 128],
-                 [64, 0, 32], [0, 224, 128], [128, 0, 0], [192, 0, 160],
-                 [0, 96, 128], [128, 128, 128], [64, 0, 160], [128, 224, 128],
-                 [128, 128, 64], [192, 0, 32], [128, 96, 0], [128, 0, 192],
-                 [0, 128, 32], [64, 224, 0], [0, 0, 64], [128, 128, 160],
-                 [64, 96, 0], [0, 128, 192], [0, 128, 160], [192, 224, 0],
-                 [0, 128, 64], [128, 128, 32], [192, 32, 128], [0, 64, 192]])
-
-    def __init__(self,
-                 img_suffix='.jpg',
-                 seg_map_suffix='.png',
-                 **kwargs) -> None:
-        super().__init__(
-            img_suffix=img_suffix, seg_map_suffix=seg_map_suffix, **kwargs)
+                 [64, 128, 32], [0, 160, 0], [0, 0, 0], [192, 128, 160]])
+                 #[0, 32, 0], [0, 128, 128], [64, 128, 160], [128, 160, 0],
+                 #[0, 128, 0], [192, 128, 32], [128, 96, 128], [0, 0, 128],
+                 #[64, 0, 32], [0, 224, 128], [128, 0, 0], [192, 0, 160],
+                 #[0, 96, 128], [128, 128, 128], [64, 0, 160], [128, 224, 128],
+                 #[128, 128, 64], [192, 0, 32], [128, 96, 0], [128, 0, 192],
+                 #[0, 128, 32], [64, 224, 0], [0, 0, 64], [128, 128, 160],
+                 #[64, 96, 0], [0, 128, 192], [0, 128, 160], [192, 224, 0],
+                 #[0, 128, 64], [128, 128, 32], [192, 32, 128], [0, 64, 192]])
+"""
