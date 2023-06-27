@@ -3,7 +3,7 @@ optimizer = dict(type='SGD', lr=0.01, momentum=0.9, weight_decay=0.0005)
 optim_wrapper = dict(type='OptimWrapper', optimizer=optimizer, clip_grad=None)
 # learning policy
 
-max_iters_ = 50000
+max_iters_ = 160000
 param_scheduler = [
     dict(
         type='PolyLR',
@@ -23,4 +23,4 @@ default_hooks = dict(
     param_scheduler=dict(type='ParamSchedulerHook'),
     checkpoint=dict(type='CheckpointHook', by_epoch=False, interval=2000),
     sampler_seed=dict(type='DistSamplerSeedHook'),
-    visualization=dict(type='SegVisualizationHook', draw=True, interval=1))
+    visualization=dict(type='SegVisualizationHook', draw=True, interval=10))

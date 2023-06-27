@@ -1,7 +1,7 @@
 # model settings
 norm_cfg = dict(type='SyncBN', requires_grad=True)
 
-num_classes_ = 28
+num_classes_ = 10
 weight_cross_entropy_ = 5
 
 data_preprocessor = dict(
